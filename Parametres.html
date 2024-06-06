@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Choix des paramètres</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Parametres.css">
+
+    <!-- JS -->
+    <script src="Parametres.js" defer></script>
+
+    <!-- Carte station -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <!-- Titre de la page -->
+        <h1 class="title">Choix des paramètres</h1>
+        <br>
+
+        <!-- Accès aux différentes pages -->
+        <nav>
+            <div class="nav-box">
+                <a href="Accueil.html">Accueil</a>
+            </div>
+            <div class="nav-box">
+                <a href="Parametres.html">Choix des paramètres</a>
+            </div>
+            <div class="nav-box">
+                <a href="Visualisation.html">Visualisation des données</a>
+            </div>
+            <div class="nav-box">
+                <a href="Fichiers.html">Obtenir les fichiers exploitables</a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <br><br>
+
+        <!-- STATION -->
+
+        <!-- Bannière titre -->
+        <div class="banner-container">
+            <p>Choix de la station</p>
+        </div>
+
+        <br><br>
+
+        <!-- Choix de la méthode de recherche -->        
+        <label for="searchMode">Mode de recherche :</label>
+        <select id="searchMode">
+            <option value="coordinates">Entrer des coordonnées</option>
+            <option value="station">Choisir une station</option>
+        </select>
+
+        <br><br>
+
+        <!-- Choix d'une station dans le menu déroulant -->
+        <form id="stationForm" onsubmit="return getStationLocation()">
+            <label for="station">Choisir une station :</label>
+            <select id="station">
+                <!-- Options peuplées dynamiquement par JavaScript -->
+            </select>
+        </form>
+
+        <!-- Choix par entrée des coordonnées -->
+        <form id="coordForm" onsubmit="return getStationLocation()">
+            <label for="latitude">Latitude :</label>
+            <input type="text" id="latitude" placeholder="Entrez la latitude">
+            <br><br>
+            <label for="longitude">Longitude :</label>
+            <input type="text" id="longitude" placeholder="Entrez la longitude">
+        </form>
+
+        <br><br>
+
+        <!-- Bouton pour afficher la station sur la carte -->
+        <button id="showOnMapBtn" onclick="getStationLocation()">Rechercher</button>
+
+        <br>
+
+        <!-- Bouton pour envoyer la station -->
+        <button onclick="sendStation()">Envoyer cette station</button>
+
+        <br><br><br>
+
+        <!-- Bouton pour réinitialiser la carte -->
+        <button type="button" onclick="resetMap()">Réinitialiser la carte</button>
+
+        <br>
+
+        <!-- Carte pour afficher la station -->
+        <div id="map" style="height: 400px;"></div>
+
+        <br><br>
+
+        
+        <!-- PERIODE TEMPORELLE -->
+
+        <!-- Bannière titre -->
+        <div class="banner-container">
+            <p>Choix de la période temporelle</p>
+        </div>
+
+        <br><br>
+
+        <!-- Choix de l'année de début -->
+        <label for="startYear">Année de début :</label>
+        <select id="startYear" onchange="updateEndYearOptions()">
+            <!-- Options peuplées dynamiquement par JavaScript -->
+        </select>
+
+        <br><br>
+
+        <!-- Choix de l'année de fin -->
+        <label for="endYear">Année de fin :</label>
+        <select id="endYear">
+            <!-- Options peuplées dynamiquement par JavaScript -->
+        </select>
+
+        <br><br>
+
+        <!-- Bouton pour envoyer les dates sélectionnées -->
+        <button onclick = sendDates()>Envoyer ces dates</button>
+
+        <br><br>
+
+
+        <!-- RECAPITULATIF DES INFORMATIONS -->
+
+        <!-- Bannière titre -->
+        <div class="banner-container">
+            <p>Récaputilatif des informations</p>
+        </div>
+
+        <br><br>
+
+        <!-- Tableau récapitulatif -->
+        <table id="recapTable">
+            <thead>
+                <tr>
+                    <th>Station</th>
+                    <th>Date de début</th>
+                    <th>Date de fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="stationName"></td>
+                    <td id="startDate"></td>
+                    <td id="endDate"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br> 
+
+        <button onclick = envoyerParametres()>Envoyer ces paramètres</button>
+
+        <p class="txt">Veuillez attendre le message indiquant que les paramètres ont bien été envoyés avant de continuer.</p>
+
+        <br> <br>
+
+        <!-- Bouton pour visualiser les données -->
+        <a href="Visualisation.html"><button class="blue-button">Visualiser les données</button></a>
+
+        <!-- Bouton pour obtenir les fichiers exploitables -->
+        <a href="Fichiers.html"><button class="blue-button">Obtenir des fichiers exploitables</button></a>
+
+
+    </main>
+
+    <!-- Bas de page -->
+    <br> <br> <br>
+    <footer>
+        <div class="footer-container">
+            <!-- Crédits -->
+            <div class="footer-content">
+                <p><a href="plan_site.html">Plan du site</a> | <a href="contact.html">Contact</a></p>
+                <p>&copy; 2024 - Site réalisé par Auxane Marrec et Eva Gratius</p>
+
+                <br> <br>
+
+                <!-- Photos -->
+                <div class="profile-pics-container">
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Auxane.jpg" alt="Photo de profil d'Auxane Marrec">
+                    </div>
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Eva.jpg" alt="Photo de profil d'Eva Gratius">
+                    </div>
+                </div>
+
+                <!-- Liens LinkedIn -->
+                <div class="linkedin-link">
+                    <div class="linkedin-Auxane">
+                        <p><a href="https://www.linkedin.com/in/auxane-marrec/">Auxane Marrec</a></p>
+                    </div>
+                    <div class="linkedin-Eva">
+                        <p><a href="https://www.linkedin.com/in/eva-gratius/">Eva Gratius</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>Obtenir les fichiers exploitables</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Fichiers.css">
+
+    <!-- JS -->
+    <script src="Fichiers.js"></script>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <!-- Titre de la page -->
+        <h1 class="title">Obtenir les fichiers exploitables</h1>
+        
+        <br>
+
+        <!-- Accès aux différentes pages -->
+        <nav>
+            <div class="nav-box">
+                <a href="Accueil.html">Accueil</a>
+            </div>
+            <div class="nav-box">
+                <a href="Parametres.html">Choix des paramètres</a>
+            </div>
+            <div class="nav-box">
+                <a href="Visualisation.html">Visualisation des données</a>
+            </div>
+            <div class="nav-box">
+                <a href="Fichiers.html">Obtenir les fichiers exploitables</a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+        
+        <br> <br> 
+
+        <!-- TELECHARGEMENT FICHIERS EXCEL SUR UNE ANNEE -->
+
+        <div class="banner-container">
+            <p>Obtenir des fichiers exploitables pour une année</p> 
+        </div>
+
+        <br> <br>
+
+        <div class="table">
+
+            <div class="row">
+
+                <div class="cell">
+
+                    <!-- Menu déroulant pour choix de l'année -->
+                    <label for="selectedYear">Choisir une année :</label>
+                    <select id="selectedYear">
+                    <!-- Options peuplées dynamiquement par JavaScript -->
+                    </select>
+
+                    <br> <br> 
+
+                    <!-- Bouton pour envoyé l'année cible-->
+                    <button onclick="envoyerAnnee()">Valider cette année</button>
+
+                    <br> <br> 
+
+                    <!-- Bouton téléchargement -->
+                    <button class="blue-button" onclick="telechargerFichierExcel()">Télécharger Fichier Excel (année cible)</button>
+                </div>
+
+                <div class="cell">
+                    <!-- Conteneur pour l'image et le texte -->
+                    <div class="image-text-container">
+                    <!-- Image -->
+                    <img src="Images/excel_Brest_juillet2023.jpg" alt="Excel Brest Juillet 2023">
+                    <!-- Texte -->
+                    <p class="txt">Fichier excel pour le mois de juillet 2023, Brest</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <br> <br> 
+
+
+        <!-- TELECHARGEMENT FICHIERS EXCEL LA MOYENNE DES ANNEES -->
+
+        <div class="banner-container">
+            <p>Obtenir des fichiers exploitables sur la moyenne des annees</p> 
+        </div>
+
+        <br> <br>
+        
+        <div class="table">
+            
+            <div class="row">
+
+              <div class="cell">
+                
+                <!-- Bouton téléchargement -->
+                <button class="blue-button" onclick="telechargerFichierExcelMoyenne()">Télécharger Fichier Excel (moyenne d'années)</button>
+              </div>
+              <div class="cell">
+                <!-- Conteneur pour l'image et le texte -->
+                <div class="image-text-container">
+                    <!-- Image -->
+                    <img src="Images/guipavas_2022_2024_juillet.png" alt="Excel Brest Juillet 2023">
+                    <!-- Texte -->
+                    <p class="txt">Fichier excel pour le mois de juillet 2022 et 2023, Brest</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+        
+
+        
+       
+
+        
+
+    </main>
+
+    <br> <br> <br>
+
+    <!-- Bas de page -->
+    <footer>
+        <div class="footer-container">
+            
+            <!-- Crédits -->
+            <div class="footer-content">
+                <p>&copy; 2024 - Site réalisé par Auxane Marrec et Eva Gratius</p>
+
+                <br> <br>
+
+                <!-- Photos -->
+                <div class="profile-pics-container">
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Auxane.jpg" alt="Photo de profil d'Auxane Marrec">    
+                    </div>
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Eva.jpg" alt="Photo de profil d'Eva Gratius">
+                    </div>
+                </div>
+
+                <!-- Liens LinkedIn -->
+                <div class="linkedin-link">
+                    <div class="linkedin-Auxane">
+                        <p><a href="https://www.linkedin.com/in/auxane-marrec/">Auxane Marrec</a></p>
+                    </div>
+                    <div class="linkedin-Eva">
+                        <p><a href="https://www.linkedin.com/in/eva-gratius/">Eva Gratius</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

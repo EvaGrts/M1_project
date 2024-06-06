@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Visualisation des données</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Visualisation.css">
+
+   <!-- Bibliothèque Plotly.js -->
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- JS -->
+    <script src="Visualisation.js" defer></script> 
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <!-- Titre de la page -->
+        <h1 class="title">Visualisation des données</h1>
+        <br>
+
+        <!-- Accès aux différentes pages -->
+        <nav>
+            <div class="nav-box">
+                <a href="Accueil.html">Accueil</a>
+            </div>
+            <div class="nav-box">
+                <a href="Parametres.html">Choix des paramètres</a>
+            </div>
+            <div class="nav-box"> 
+                <a href="Visualisation.html">Visualisation des données</a>
+            </div>
+            <div class="nav-box">
+                <a href="Fichiers.html">Obtenir les fichiers exploitables</a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- GRAPHIQUE DATE | TEMPERATURE ou HUMIDITE ou POINT DE ROSEE -->
+
+        <br> <br> 
+
+        <!-- Bannière titre -->
+        <div class="banner-container">
+            <p>Graphique d'une variable (température, humidité ou point de rosée) en fonction de la date</p>
+        </div>
+
+        <br> <br> 
+
+        <!-- Sélecteur de variable -->
+        <label for="variable">Choisir une variable :</label>
+        <select id="variable" onchange="update2DChart(responseData)">
+            <option value="temperature">Température</option>
+            <option value="humidity">Humidité</option>
+            <option value="dew_point">Point de rosée</option>
+        </select>
+
+        <!-- Conteneur du graphique -->
+        <div id="chart"></div>
+
+        <!-- Tableau pour afficher les statistiques -->
+        <table id="statsTable">
+            <tr>
+                <th>Statistique</th>
+                <th>Valeur</th>
+            </tr>
+            <tr>
+                <td>Moyenne</td>
+                <td id="meanValue"></td>
+            </tr>
+            <tr>
+                <td>Valeur minimale</td>
+                <td id="minValue"></td>
+            </tr>
+            <tr>
+                <td>Valeur maximale</td>
+                <td id="maxValue"></td>
+            </tr>
+        </table>
+
+        <br> <br> 
+
+
+        <!-- GRAPHIQUE 3D | TEMPERATURE + HUMIDITE + DATE -->
+
+        <!-- Bannière titre -->
+        <div class="banner-container">
+            <p>Graphique 3D (date, température et humidité)</p>
+        </div>
+
+        <br> <br> 
+
+        <!-- Conteneur du graphique 3D -->
+        <div id="chart3d"></div>
+
+        <!-- Boutons pour choisir les seuils de température et d'humidité -->
+        <div>
+            <label for="temperatureThreshold">Seuil de température :</label>
+            <input type="number" id="temperatureThreshold" value="20" min="-40" max="50">
+            <label for="humidityThreshold">Seuil d'humidité :</label>
+            <input type="number" id="humidityThreshold" value="50" min="0" max="100">
+            <button onclick="update3DChart(responseData)">Actualiser</button>
+        </div>
+
+        
+    </main>
+
+
+
+    <!-- Bas de page -->
+    <br> <br> <br>
+    <footer>
+        <div class="footer-container">
+            <!-- Crédits -->
+            <div class="footer-content">
+                <p>&copy; 2024 - Site réalisé par Auxane Marrec et Eva Gratius</p>
+
+                <br> <br>
+
+                <!-- Photos -->
+                <div class="profile-pics-container">
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Auxane.jpg" alt="Photo de profil d'Auxane Marrec">    
+                    </div>
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Eva.jpg" alt="Photo de profil d'Eva Gratius">
+                    </div>
+                </div>
+
+                <!-- Liens LinkedIn -->
+                <div class="linkedin-link">
+                    <div class="linkedin-Auxane">
+                        <p><a href="https://www.linkedin.com/in/auxane-marrec/">Auxane Marrec</a></p>
+                    </div>
+                    <div class="linkedin-Eva">
+                        <p><a href="https://www.linkedin.com/in/eva-gratius/">Eva Gratius</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

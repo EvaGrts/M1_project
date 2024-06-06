@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>Accueil</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Accueil.css">
+
+    <!-- Carte météo en temps réel -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- JS -->
+    <script src="Accueil.js"></script>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <!-- Titre de la page -->
+        <h1 class="title">Accueil</h1>
+        
+        <br>
+
+        <!-- Accès aux différentes pages -->
+        <nav>
+            <div class="nav-box">
+                <a href="Accueil.html">Accueil</a>
+            </div>
+            <div class="nav-box">
+                <a href="Parametres.html">Choix des paramètres</a>
+            </div>
+            <div class="nav-box">
+                <a href="Visualisation.html">Visualisation des données</a>
+            </div>
+            <div class="nav-box">
+                <a href="Fichiers.html">Obtenir les fichiers exploitables</a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Description du site -->
+        <section class="welcome-section">
+            <h2>Bienvenue à l'équipe AVELTECH</h2>
+            <p>Nous sommes ravis de vous accueillir sur notre site dédié à l'équipe AVELTEC.</p>
+            <p>Accédez à la météo en temps réel des stations, trouvez la station la plus proche de vous, obtenez une visualisation des archives de données météorologiques des années de votre choix et récupérez des fichiers Excel.</p>
+        </section>
+
+        <!-- Logo entreprise -->
+        <div class="logo-container">
+            <img class="centered-image" src="Images/logo-AVELTEC.png" alt="Logo AVELTEC">
+        </div>
+
+        <br> <br> <br>
+
+        <div class="banner-container">
+            <p>Présentation du site et des fonctionnalités</p> 
+        </div>
+
+        <!-- Vidéo de démonstration -->
+        <div class="video-container">
+            <video width="640" height="360" controls>
+              <source src="Tutoriels/Demo_projetM1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Bannière titre -->
+        <div class="banner-container">
+            <p>Obtenir la météo en temps réel des stations dans toute la France</p>
+        </div>
+
+        <br> <br>
+
+        <!-- Carte météo en temps réel -->  
+        <h2 class="title">Météo en temps réel</h2>
+
+        <!-- Bouton récupération cle API -->  
+        <div>
+            <label for="apiKey">Clé API : </label>
+            <input type="text" id="apiKey" placeholder="Entrez votre clé API">
+            <button id="meteoTR">Obtenir la météo en temps réel</button> 
+        </div> 
+
+        <!-- Tuto obtention cle API -->  
+        <a href="Tutoriels/" target="_blank">Tutoriel pour obtenir la clé API</a>
+
+        <br> 
+
+        <!-- Affichage de la carte -->  
+        <div id="map" style="height: 600px;"></div>
+
+    </main>
+
+    <br> <br> <br>
+
+    <!-- Bas de page -->
+    <footer>
+        <div class="footer-container">
+            
+            <!-- Crédits -->
+            <div class="footer-content">
+                <p>&copy; 2024 - Site réalisé par Auxane Marrec et Eva Gratius</p>
+
+                <br> <br>
+
+                <!-- Photos -->
+                <div class="profile-pics-container">
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Auxane.jpg" alt="Photo de profil d'Auxane Marrec">    
+                    </div>
+                    <div class="profile-pic">
+                        <img src="Images/pdp_Eva.jpg" alt="Photo de profil d'Eva Gratius">
+                    </div>
+                </div>
+
+                <!-- Liens LinkedIn -->
+                <div class="linkedin-link">
+                    <div class="linkedin-Auxane">
+                        <p><a href="https://www.linkedin.com/in/auxane-marrec/">Auxane Marrec</a></p>
+                    </div>
+                    <div class="linkedin-Eva">
+                        <p><a href="https://www.linkedin.com/in/eva-gratius/">Eva Gratius</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
